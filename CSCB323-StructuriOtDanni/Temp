@@ -1,0 +1,30 @@
+#include "pch.h"
+#include <iostream>
+
+using namespace std;
+
+typedef struct Element * po;
+struct Element {
+	int Data;
+	po Next;
+};
+
+void main()
+{
+	po na;
+	po p;
+	na = NULL;
+	int k=1;
+	while (k>= 0) {
+		p = new Element;
+		cin >> k;
+		p->Data = k;
+		p->Next = na;
+		na = p;
+	}
+	p = na;
+	while (p != NULL) {
+		cout << p->Data << endl;
+		p = p->Next;
+	}
+}
